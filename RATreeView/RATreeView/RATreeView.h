@@ -345,8 +345,8 @@ typedef enum RATreeViewRowAnimation {
 /**
  *  Asks the data source for the edit actions for an item. This is an iOS 8 only method.
  *
- *  @praram treeView	The tree-view object requesting this information.
- *  @param item			An item identifying a cell in the tree view.
+ *  @praram treeView    The tree-view object requesting this information.
+ *  @param item            An item identifying a cell in the tree view.
  *
  *  @return An NSArray of `UITableViewRowAction` objects to show for editing.
  */
@@ -467,7 +467,7 @@ typedef enum RATreeViewRowAnimation {
 @property (nonatomic) CGFloat estimatedRowHeight NS_AVAILABLE_IOS(7_0);
 @property (nonatomic) UIEdgeInsets separatorInset NS_AVAILABLE_IOS(7_0);
 @property (nonatomic, nullable, copy) UIVisualEffect *separatorEffect NS_AVAILABLE_IOS(8_0) UI_APPEARANCE_SELECTOR;
-
+@property (nonatomic) BOOL disableExpandsAndCollapsesAnimation;
 @property (nonatomic) BOOL cellLayoutMarginsFollowReadableWidth NS_AVAILABLE_IOS(9_0);
 @property (nonatomic, nullable, strong) UIView *backgroundView;
 

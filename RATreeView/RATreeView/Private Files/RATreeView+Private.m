@@ -75,6 +75,9 @@
 
 - (void)collapseCellForTreeNode:(RATreeNode *)treeNode collapseChildren:(BOOL)collapseChildren withRowAnimation:(RATreeViewRowAnimation)rowAnimation
 {
+    if (self.disableExpandsAndCollapsesAnimation) {
+        [UIView setAnimationsEnabled:NO];
+    }
   [self.tableView beginUpdates];
   [self.batchChanges beginUpdates];
   
@@ -90,6 +93,9 @@
   
   [self.batchChanges endUpdates];
   [self.tableView endUpdates];
+    if (self.disableExpandsAndCollapsesAnimation) {
+        [UIView setAnimationsEnabled:YES];
+    }
 }
 
 - (void)expandCellForTreeNode:(RATreeNode *)treeNode
@@ -99,6 +105,9 @@
 
 - (void)expandCellForTreeNode:(RATreeNode *)treeNode expandChildren:(BOOL)expandChildren withRowAnimation:(RATreeViewRowAnimation)rowAnimation
 {
+    if (self.disableExpandsAndCollapsesAnimation) {
+        [UIView setAnimationsEnabled:NO];
+    }
   [self.tableView beginUpdates];
   [self.batchChanges beginUpdates];
   
@@ -114,6 +123,9 @@
   
   [self.batchChanges endUpdates];
   [self.tableView endUpdates];
+    if (self.disableExpandsAndCollapsesAnimation) {
+        [UIView setAnimationsEnabled:YES];
+    }
 }
 
 - (void)insertItemAtIndex:(NSInteger)index inParent:(id)parent withAnimation:(RATreeViewRowAnimation)animation
